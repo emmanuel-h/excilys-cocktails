@@ -1,0 +1,16 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image">
+      <img [src]="recipe.picture">
+    </div>
+    <mat-card-title>{{ recipe.name }}</mat-card-title>
+    <mat-card-subtitle>&nbsp;</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="recipe.picture" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" routerLink="/recipes/{{ recipe.id }}">Show {{displayIngredients ? 'less' : 'more'}}</button>
+    <button mat-raised-button color="accent">Delete</button>
+  </mat-card-actions>
+</mat-card>

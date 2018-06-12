@@ -1,0 +1,34 @@
+<div class="container">
+  <mat-card class="example-card" *ngIf="recipe">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <img [src]="recipe.picture">
+      </div>
+      <mat-card-title>{{ recipe.name }}</mat-card-title>
+      <mat-card-subtitle>&nbsp;</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="recipe.picture" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p class="description">
+        {{ recipe.description }}
+      </p>
+      <div *ngIf="displayIngredients">
+        <h3>Ingrédients</h3>
+        <ul>
+          <li *ngFor="let ingredient of recipe.ingredients">
+            {{ingredient.name}}&nbsp;:&nbsp;{{ingredient.quantity}}&nbsp;{{ingredient.unit}}
+          </li>
+        </ul>
+        <h3>Instructions</h3>
+        <ul>
+          <li *ngFor="let instruction of (recipe.instructions | strToArray)">
+            {{instruction}}
+          </li>
+        </ul>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="expand()">Show {{displayIngredients ? 'less' : 'more'}}</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
