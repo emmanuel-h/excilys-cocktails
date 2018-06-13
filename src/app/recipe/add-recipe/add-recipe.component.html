@@ -1,3 +1,26 @@
-<p>
-  add-recipe works!
-</p>
+<div class="container">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Création d'une recette</mat-card-title>
+      <mat-card-subtitle>&nbsp;</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nom" [(ngModel)]="recipe.name">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Url de l'image" [(ngModel)]="recipe.url">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Description" [(ngModel)]="recipe.description">
+  </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="saveRecipe()">Confirmer</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+{{name}}

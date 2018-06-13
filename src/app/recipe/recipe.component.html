@@ -11,6 +11,6 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-raised-button color="primary" routerLink="/recipes/{{ recipe.id }}">Show {{displayIngredients ? 'less' : 'more'}}</button>
-    <button mat-raised-button color="accent">Delete</button>
+    <button mat-raised-button color="accent" (click)="deleteRecipe(recipe.id)">Delete</button>
   </mat-card-actions>
 </mat-card>

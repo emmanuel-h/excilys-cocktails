@@ -15,7 +15,12 @@ export class RecipesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.recipeService.getRecipes().subscribe(recipes => this.recipes = recipes);
+    this.recipeService.getRecipes().subscribe(recipes => this.recipes = recipes, error => { });
+  }
+
+  updateRecipes(recipe: Recipe) {
+    const index = this.recipes.indexOf(recipe);
+    this.recipes.splice(index, 1);
   }
 
 }

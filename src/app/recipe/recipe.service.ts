@@ -20,4 +20,12 @@ export class RecipeService {
     return this.http.get<Recipe>(`${ this._baseUrl }/${ id }`);
   }
 
+  saveRecipe(recipe: Recipe): Observable<Recipe> {
+    return this.http.post<Recipe>(this._baseUrl, recipe);
+  }
+
+  deleteRecipe(id: number): Observable<Recipe> {
+    return this.http.delete<Recipe>(`${ this._baseUrl }/${ id }`);
+  }
+
 }
