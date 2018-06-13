@@ -7,20 +7,24 @@ import {StrToArrayPipe} from './str-to-array.pipe';
 import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import {RouterModule} from '@angular/router';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {SortPipe} from './recipe.sort';
 
 @NgModule({
   imports: [
     CommonModule,
     CustomMaterialModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     RecipeComponent,
     RecipesComponent,
     StrToArrayPipe,
     RecipeDetailComponent,
-    AddRecipeComponent]
+    AddRecipeComponent,
+    SortPipe
+  ]
 })
 export class RecipeModule { }

@@ -8,11 +8,13 @@ import { HeaderComponent } from './header/header.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import {RecipeModule} from './recipe/recipe.module';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
